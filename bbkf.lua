@@ -111,9 +111,7 @@ Blocks.Table = function(el)
 end
 
 Blocks.BulletList = function(el)
-    local result = {
-        "[LIST]"
-    }
+    local result = { "[LIST]" }
     for i = 1, #el.content do
         local content = blocks(el.content[i], blankline)
         result[#result + 1] = concat({
