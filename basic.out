@@ -1,0 +1,25 @@
+Hello, world!
+
+This is a paragraph with some [B]bold[/B] text and some [I]italic[/I] text.
+
+This is a link: [URL="http://example.com"]Link text[/URL]
+
+Here is a bulleted list:
+
+[LIST]
+[*]First
+[*]Second.
+[/LIST]
+
+Here is a numbered list:
+
+[LIST=1]
+[*]First
+[*]Second.
+[/LIST]
+
+And some quoted text:
+
+[QUOTE]This is a quote.[/QUOTE]
+
+Here is a reference link using 'ref': [URL="http://example.com"]Reference link text[/URL]

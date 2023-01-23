@@ -1,0 +1,25 @@
+<p>This is <b>bold</b> text.</p>
+<p>This is <i>italic</i> text.</p>
+<p>This is <u>underlined</u> text.</p>
+<p>This is <s>struck-through</s> text.</p>
+<pre><code class="language-php">echo $hello . 'world';</code></pre>
+<p>A par with <code>inline code</code>.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>First header</th>
+            <th>Second header</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1-1</td>
+            <td>1-2</td>
+        </tr>
+        <tr>
+            <td>2-1</td>
+            <td>2-2</td>
+        </tr>
+    </tbody>
+</table>
