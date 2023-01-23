@@ -252,5 +252,6 @@ end
 
 function Writer(doc, opts)
     local d = blocks(doc.blocks, blankline)
+    d = nowrap(d)
     return layout.render(concat({ d }))
 end
