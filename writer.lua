@@ -142,20 +142,41 @@ end
 
 Blocks.CodeBlock = function(el)
     -- , CodeBlock ( "" , [ "php" ] , [] ) "echo $hello . 'world';"
+    local result = empty
     local lang = empty
     if #el.classes > 0 then
         lang = el.classes[1]
         table.remove(el.classes, 1)
     end
-    local result = {
-        '[CODE="'
-        , lang
-        , '"]'
-        , cr
-        , el.text
-        , cr
-        , "[/CODE]"
-    }
+    if string.lower(lang) == "spoiler" then
+        local doc = pandoc.read(el.text)
+        result = {
+            '[SPOILER]'
+            , cr
+            , blocks(doc.blocks, blankline)
+            , cr
+            , "[/SPOILER]"
+        }
+    elseif string.lower(lang) == "private" then
+        local doc = pandoc.read(el.text)
+        result = {
+            '[PRIVATE]'
+            , cr
+            , blocks(doc.blocks, blankline)
+            , cr
+            , "[/PRIVATE]"
+        }
+    else
+        result = {
+            '[CODE="'
+            , lang
+            , '"]'
+            , cr
+            , el.text
+            , cr
+            , "[/CODE]"
+        }
+    end
     return concat(result)
 end
 
@@ -210,7 +231,6 @@ Inlines.Underline = function(el)
         , "[/U]"
     })
 end
-
 
 Inlines.Link = function(el)
     return concat({
