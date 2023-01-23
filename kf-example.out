@@ -5,3 +5,24 @@ This is [I]italic[/I] text.
 This is [U]underlined[/U] text.
 
 This is [S]struck-through[/S] text.
+
+[CODE="php"]
+echo $hello . 'world';
+[/CODE]
+
+A par with [ICODE]inline code[/ICODE].
+
+[TABLE]
+  [TR]
+    [TH]First header[/TH]
+    [TH]Second header[/TH]
+  [/TR]
+  [TR]
+    [TD]1-1[/TD]
+    [TD]1-2[/TD]
+  [/TR]
+  [TR]
+    [TD]2-1[/TD]
+    [TD]2-2[/TD]
+  [/TR]
+[/TABLE]
