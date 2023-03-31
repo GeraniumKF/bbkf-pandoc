@@ -39,7 +39,7 @@ local function blocks(bs, sep)
 end
 
 Blocks.Para = function(el)
-    return inlines(el.content)
+    return concat({ inlines(el.content), cr})
 end
 
 Blocks.Plain = function(el)
@@ -49,7 +49,9 @@ end
 Blocks.BlockQuote = function(el)
     return concat({
         "[QUOTE]"
+        , cr
         , blocks(el.content)
+        , cr
         , "[/QUOTE]"
     })
 end
@@ -246,6 +248,23 @@ Inlines.Quoted = function(el)
     else
         return concat { "'", inlines(el.content), "'" }
     end
+end
+
+Inlines.SoftBreak = function(el)
+    return concat({cr, cr})
+end
+
+Blocks.LineBreak = function(el)
+    return concat({cr, cr})
+end
+
+Inlines.LineBreak = function(el)
+    return concat({cr, cr})
+end
+
+
+Inlines.Cite = function(el)
+    return inlines(el.content)
 end
 
 function Writer(doc, opts)
